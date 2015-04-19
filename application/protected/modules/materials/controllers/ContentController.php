@@ -57,7 +57,8 @@ class ContentController extends Controller
 	}*/
 
 	/**
-	 * Отобразит модель SEO-url, указанным в качестве $alias.
+	 * Отобразит модель с SEO-url, указанным в качестве $alias.
+	 *
 	 * @param string $alias SEO-url материала
 	 */
 	public function actionView($alias)
@@ -170,12 +171,12 @@ class ContentController extends Controller
 	}
 
 	/**
-	 * найдёт материал по его alias.
+	 * найдёт материал по его SEO-url.
 	 *
 	 * если ничего ничего не удалось найти, будет выброшено HTTP исключение.
 	 *
 	 * @param string $alias SEO-url материала
-	 * @return Content the loaded model
+	 * @return Content модель материала
 	 * @throws CHttpException
 	 */
 	public function loadModelByAlias($alias)
