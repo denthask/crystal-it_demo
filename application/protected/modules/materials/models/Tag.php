@@ -63,12 +63,13 @@ class Tag extends CActiveRecord
 		);
 	}
 
-	public function getName(){
-		return $this->title;
-	}
-
+	/**
+	 * вернёт ссылку для отображения материалов по указанному tag (нужен для работы расширения CumulusTagCloud).
+	 *
+	 * @return string
+	 */
 	public function getUrl(){
-		return "tag/listMaterials/alias/{$this->alias}";
+		return Yii::app()->createUrl("materials/tag/listMaterials", array('alias'=>$this->alias));
 	}
 
 	/**
